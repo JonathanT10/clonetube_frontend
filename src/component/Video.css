@@ -58,3 +58,9 @@
     width: 100px;
     height: 50px;
   }
+
+  .comments {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
