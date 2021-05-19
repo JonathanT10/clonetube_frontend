@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import Search from './component/Search'
+import Video from './component/video';
+import VideoList from './component/videoList';
+import VideoPlayer from './component/videoPlayer';
 import youtubeApi from './component/youtubeApi'
 
 export default class App extends React.Component {
@@ -9,6 +12,12 @@ export default class App extends React.Component {
       videosMetaInfo: [],
       selectedVideoId: null
     };
+
+    onVideoSelected = videoId => {
+      this.setState({
+        selectedVideoId: videoId
+      })
+    }
 
     onSearch = async keyword => {
       const response = await youtubeApi.get("/search", {
@@ -27,6 +36,11 @@ export default class App extends React.Component {
       return (
         <div className="App">
           <Search onSearch={this.onSearch} />
+          <VideoList
+            onVideoSelected={this.onVideoSelected}
+            data={this.state.videosMetaInfo}
+            />
+            <VideoPlayer videoId={this.state.selectedVideoId} />
         </div>
       );
     }

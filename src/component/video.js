@@ -1,19 +1,19 @@
 import React from 'react';
-import '../styles/_video.css';
+import './Video.css'
 
 function selectVideo(videoIdObj, onVideoSelected) {
-    onVideoSelected(videoIdObj.videoid);
+    onVideoSelected(videoIdObj.videoId);
 }
 
 function getCss(imageurl) {
-    const _tyles = {
+    const _styles = {
         backgroungImage: `url(${imageurl})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
         height: "180px",
         position: "relative"
     };
-    return -styles;
+    return _styles;
 }
 
 function constructVideoTitles(videosData, onVideoSelected) {
@@ -31,7 +31,7 @@ function constructVideoTitles(videosData, onVideoSelected) {
 }
 
 const Video = ({data, onVideoSelected}) => {
-    return <>{constructVidoeTitles(data, onVideoSelected)}</>;
+    return <>{constructVideoTitles(data, onVideoSelected)}</>;
 };
 
 export default Video;
