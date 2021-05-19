@@ -5,27 +5,33 @@ class Comments extends React.Component {
         text: '',
         videoId: ''
     }
+    
+    onCommentChanged = event => {
+      const text = event.target.value;
+      this.setState({ text: text });
+      console.log("text in comment",text)
+    };
+    onSubmit = event => {
+      event.preventDefault();
+      this.props.submitComment(this.state.text);
+    };
+ 
 
-    onSubmit (e){
-        e.preventDefault();
-        this.props.submitComment(this.state.text)
-        
-    }
-
-    render(props){
-        
-
+    render(){
+    
     return (
-        <form className = 'comments'>
+        <form onSubmit={this.onSubmit} className = 'comments'>
         
             <input
             type = 'text'
             name = 'comments'
-            onSubmit = {this.onSubmit}
+            defaultValue = {this.state.text}
+            onChange = {this.onCommentChanged}
             placeholder = 'Add public comment here'
             />
             <input type="submit" value="submit"/>
         </form>
+        
     )
     } 
 }

@@ -6,6 +6,7 @@ import VideoList from './component/videoList';
 import VideoPlayer from './component/videoPlayer';
 import youtubeApi from './component/youtubeApi'
 import commentAPI from './component/commentAPI'
+import GetComm from './component/commentGet';
 
 export default class App extends React.Component {
 
@@ -37,16 +38,18 @@ export default class App extends React.Component {
 
     submitComment = async (text) => {
       console.log('text', text)
-
-       await commentAPI.post("", 
-       {
-        params: {
-          text: text,
-          videoId: this.state.selectedVideoId
+      console.log("id", this.state.selectedVideoId)
+      let comment = {text: text, videoId: this.state.selectedVideoId}
+      let comm = JSON.stringify(comment)
+       await commentAPI.post("", {
+       params: {
+     comm
         }
       });
 
     }
+
+  
 
   
    render() {
@@ -59,7 +62,7 @@ export default class App extends React.Component {
             />
             <VideoPlayer videoId={this.state.selectedVideoId} />
             <Comments submitComment = {this.submitComment} videoId = {this.state.selectedVideoId} />
-
+            {/* <GetComm videoId={this.state.selectedVideoId}/> */}
         </div>
       );
     }
