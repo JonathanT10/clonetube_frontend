@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Search from './component/Search'
-import Video from './component/video';
+
 import VideoList from './component/videoList';
 import VideoPlayer from './component/videoPlayer';
 import youtubeApi from './component/youtubeApi'

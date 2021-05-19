@@ -1,4 +1,5 @@
 import React from "react";
+import YT_Logo from '../photos/YT_Logo.jpg';
 
 class Search extends React.Component {
   state = { title: "" };
@@ -15,13 +16,14 @@ class Search extends React.Component {
       <>
         <form onSubmit={this.onSubmit} className="search-form">
           <div className="form-controls">
-            <label>Search</label>
+            <img className = "ytlogo" src = {YT_Logo} alt = 'YouTube logo'/>
             <input
+            className='search-bar'
               id="video-search"
               type="text"
               value={this.state.title}
               onChange={this.onSearchChanged}
-              placeholder="Enter Search Keyword"
+              placeholder="Search"
             />
           </div>
         </form>
