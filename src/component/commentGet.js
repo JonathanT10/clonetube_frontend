@@ -1,36 +1,24 @@
 import React from 'react';
-import commentAPI from './commentAPI';
+import myComment from './displayComment';
 
 
 
-function GetComm (props) {
-    let comm = []
-    let comments = []
-    const getComments = async (props) => {
-       comments = await commentAPI.get(`/${props.videoId}`)
-        console.log(comments)
-         comm = comments.data;
-      }
-    
-    return(
-        
-        <table className="commentsget">
-            <caption>
-                <button 
-                 onClick={() => comments = getComments(props)}>
+
+function GetComm(props){
+let comment = props.comments.map(comment => {
+    return <li>{comment.text}</li>
+})
+    return(  
+        <ul className="commentsget">
+            <button 
+                 onClick={() => props.getComments()}>
                  Click to view Comments
-                </button>
-                
-            </caption>
-            <tbody>
-                {comments.map(comments => (
-                    <tr key={comments.videId}>
-                        <td>{comments.text}</td>
-                    </tr>
-                ))}
-            </tbody>
+            </button> 
+            <li>{comment}</li>
+
             
-        </table>
+            
+        </ul>
         
     )
 }
