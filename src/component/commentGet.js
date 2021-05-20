@@ -1,12 +1,18 @@
 import React from 'react';
-import myComment from './displayComment';
-
+import clickLikes from './likes';
 
 
 
 function GetComm(props){
 let comment = props.comments.map(comment => {
-    return <li>{comment.text}</li>
+    return <ul className="commentlist">
+    <li>{comment.text}</li>
+    <li className="likes"
+    onClick={() => clickLikes(comment)}
+    >Likes: {comment.likes}</li>
+    <li>Dislikes: {comment.dislikes}</li>
+    
+    </ul>
 })
     return(  
         <ul className="commentsget">
@@ -22,5 +28,7 @@ let comment = props.comments.map(comment => {
         
     )
 }
+
+
 
 export default GetComm;

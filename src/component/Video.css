@@ -67,6 +67,15 @@
 
   .commentsget {
     position: absolute;
-    bottom:0;
+    top:90%;
     right:30%;
+  }
+
+  .commentlist {
+    border-bottom: 4px solid rgb(184, 184, 184);
+  }
+
+  .likes {
+    font-size: small;
+    cursor: pointer;
   }

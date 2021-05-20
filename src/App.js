@@ -14,7 +14,6 @@ export default class App extends React.Component {
       videosMetaInfo: [],
       selectedVideoId: null,
       comments: [],
-      runGetComments: true
     };
 
     onVideoSelected = videoId => {
@@ -54,7 +53,8 @@ export default class App extends React.Component {
          comments: response.data
        })
      }
-      
+
+     
 
   
    render() {
