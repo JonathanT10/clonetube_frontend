@@ -1,5 +1,6 @@
 import React from 'react';
 import clickLikes from './likes';
+import clickDislikes from './dislikes';
 
 
 
@@ -10,7 +11,9 @@ let comment = props.comments.map(comment => {
     <li className="likes"
     onClick={() => clickLikes(comment)}
     >Likes: {comment.likes}</li>
-    <li>Dislikes: {comment.dislikes}</li>
+    <li className="likes"
+    onClick={() => clickDislikes(comment)}
+    >Dislikes: {comment.dislikes}</li>
     
     </ul>
 })
