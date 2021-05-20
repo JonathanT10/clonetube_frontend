@@ -12,7 +12,8 @@ function selectVideo(videoIdObj, onVideoSelected) {
       backgroundSize: "cover",
       backgroundPosition: "center center",
       height: "180px",
-      position: "relative"
+      position: "relative",
+      cursor: "pointer"
     };
     return _styles;
   }

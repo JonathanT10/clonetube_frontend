@@ -1,6 +1,7 @@
 import React from "react";
 import YT_Logo from '../photos/YT_Logo.jpg';
 
+
 class Search extends React.Component {
   state = { title: "" };
   onSearchChanged = event => {

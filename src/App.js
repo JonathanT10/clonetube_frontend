@@ -13,6 +13,7 @@ export default class App extends React.Component {
   state = {
       videosMetaInfo: [],
       selectedVideoId: null,
+      runGetComments: true
     };
 
     onVideoSelected = videoId => {
@@ -37,14 +38,10 @@ export default class App extends React.Component {
 
 
     submitComment = async (text) => {
-      console.log('text', text)
-      console.log("id", this.state.selectedVideoId)
-      let comment = {text: text, videoId: this.state.selectedVideoId}
-      let comm = JSON.stringify(comment)
-       await commentAPI.post("", {
-       params: {
-     comm
-        }
+       await commentAPI.post("/", 
+       {
+        text: text,
+        videoId: this.state.selectedVideoId
       });
 
     }
@@ -62,7 +59,7 @@ export default class App extends React.Component {
             />
             <VideoPlayer videoId={this.state.selectedVideoId} />
             <Comments submitComment = {this.submitComment} videoId = {this.state.selectedVideoId} />
-            {/* <GetComm videoId={this.state.selectedVideoId}/> */}
+            <GetComm videoId={this.state.selectedVideoId}/>
         </div>
       );
     }
