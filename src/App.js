@@ -55,6 +55,14 @@ export default class App extends React.Component {
      }
 
      
+     submitReply = async (textR, commentid) => {
+      await commentAPI.post(`/replies/${commentid}`, 
+      {
+       textR: textR,
+     });
+   }
+  
+     
 
   
    render() {

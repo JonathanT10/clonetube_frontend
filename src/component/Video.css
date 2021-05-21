@@ -79,3 +79,8 @@
     font-size: small;
     cursor: pointer;
   }
+
+  .special {
+    font-size: 100000px;
+    color: black;
+  }
