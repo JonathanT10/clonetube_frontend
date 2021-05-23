@@ -5,7 +5,6 @@ const VideoPlayer = ({ videoId }) => {
     if (!videoId) {
         return (
             <p style={{ textAlign: "center", fontSize: "18ps", fontWeight: "bold"}}>
-               Search for a video 
             </p>
         );
     }

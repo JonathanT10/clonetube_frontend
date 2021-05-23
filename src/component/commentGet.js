@@ -32,9 +32,6 @@ let comment = props.comments.map(comment => {
                  Click to view Comments
             </button> 
             <li>{comment}</li>
-
-            
-            
         </ul>
         
     )

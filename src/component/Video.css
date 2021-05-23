@@ -28,8 +28,10 @@
     width: 60%;
     height: 60%;
     position: absolute;
-    left: 0px;
-    padding: 50px 50px;
+    align-items: center;
+    display: flex;
+    margin-left: 270px;
+    margin-top: -500px;
   }
 
   .form{
@@ -48,12 +50,23 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    border: 0px;
+    width: 60%;
+    height: 60%;
+    align-items: center;
+    display: flex;
+    margin-left: 277px;
+    margin-bottom: -100px;
   }
 
   .commentsget {
     position: absolute;
     top:90%;
     right:30%;
+    align-items: center;
+    margin-top: -112px;
+    margin-right: -87px;
+
   }
 
   .commentlist {

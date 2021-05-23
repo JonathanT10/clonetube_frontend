@@ -7,6 +7,7 @@ import VideoPlayer from './component/videoPlayer';
 import youtubeApi from './component/youtubeApi'
 import commentAPI from './component/commentAPI'
 import GetComm from './component/commentGet';
+import Sidebar from './component/Sidebar';
 
 
 export default class App extends React.Component {
@@ -74,6 +75,7 @@ export default class App extends React.Component {
             onVideoSelected={this.onVideoSelected}
             data={this.state.videosMetaInfo}
             />
+          <Sidebar />
             <VideoPlayer videoId={this.state.selectedVideoId} />
             <Comments submitComment = {this.submitComment} videoId = {this.state.selectedVideoId} />
             <GetComm 

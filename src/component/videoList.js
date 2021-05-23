@@ -9,6 +9,7 @@ const VideoList = ({ data, onVideoSelected}) => {
                 <h3
                 style={{ textAlign: "center", fontSize: "18px", fontWeight: "bold"}}
                 >
+                <hr/>
                     Video List
                 </h3>
                 <Video data={data} onVideoSelected={onVideoSelected} />
